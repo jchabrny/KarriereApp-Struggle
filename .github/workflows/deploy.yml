@@ -48,7 +48,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: build-backend
     environment:
-      name: template-heroku
+      name: karriereapp-struggle-heroku
       url: https://karriereapp-struggle.herokuapp.com/
     env:
       HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
