@@ -1,0 +1,54 @@
+input {
+  margin: 5px;
+  border-radius: 4px;
+  font-size: 18px;
+}
+
+.button-container {
+  text-align: center;
+}
+
+.btn {
+  color: #facf5a;
+  padding: 5px;
+  border-radius: 4px;
+  width: 15%;
+}
+
+.btn:hover {
+  background-color: whitesmoke;
+  color: black;
+}
+
+.job-container, .header {
+  text-align: center;
+}
+
+.job-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 1rem;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid whitesmoke;
+  text-align: left;
+  padding: 8px;
+  font-size: 32px;
+}
+
+th {
+  background-color: #bde4f4;
+}
+
+td {
+  background-color: #e4f1fe;
+}
+
+p {font-size: 24px;}
