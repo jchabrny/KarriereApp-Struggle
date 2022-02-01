@@ -1,27 +1,8 @@
-import React, {useState} from "react";
+import React from "react";
+import JobHandler from "./JobHandler";
 import './DynamicTable.scss';
-import data from '../mock-data.json';
 
-type Data = typeof data
-
-export default function DynamicColumn({data}: { data: Data }) {
-
-   /* const headers = [
-        {key: "firstColumn", label: "FIRST"},
-        {key: "secondColumn", label: "SECOND"},
-        {key: "thirdColumn", label: "THIRD"},
-    ];
-                  <thead>
-                   <tr>
-                    {headers.map((row) => {
-                    return <td key={row.key}>{row.label}</td>;
-                   })}
-                   </tr>
-                   </thead>
-    */
-
-    const [mockDataJobs, setMockDataJobs] = useState(data);
-    const [inputList, setInputList] = useState({firstColumn: "", secondColumn: "", thirdColumn: ""});
+export default function DynamicColumn() {
 
     return (
         <div>
@@ -29,13 +10,49 @@ export default function DynamicColumn({data}: { data: Data }) {
                 <table>
                     <thead>
                     <tr>
-                        <th>Branche A</th>
-                        <th>Branche B</th>
-                        <th>Branche C</th>
+                        <th>Automobil</th>
+                        <th>Sport</th>
+                        <th>Bauwesen</th>
                     </tr>
                     </thead>
                     <tbody>
-                    {mockDataJobs.map((mockDataJob) => {
+                    <tr>
+                    <td>
+                        <JobHandler/>
+                    </td>
+                        <td>
+                            <JobHandler/>
+                        </td>
+                        <td>
+                            <JobHandler/>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    );
+}
+
+/* const headers = [
+     {key: "firstColumn", label: "FIRST"},
+     {key: "secondColumn", label: "SECOND"},
+     {key: "thirdColumn", label: "THIRD"},
+ ];
+               <thead>
+                <tr>
+                 {headers.map((row) => {
+                 return <td key={row.key}>{row.label}</td>;
+                })}
+                </tr>
+                </thead>
+ */
+
+//const [mockDataJobs, setMockDataJobs] = useState(data);
+// const [inputList, setInputList] = useState({firstColumn: "", secondColumn: "", thirdColumn: ""});
+
+/*
+            {mockDataJobs.map((mockDataJob) => {
                         return (
                             <tr>
                                 <td>{mockDataJob.firstColumn}</td>
@@ -95,16 +112,4 @@ export default function DynamicColumn({data}: { data: Data }) {
                                        placeholder="Enter a job ..."/>
                             </form>
                         </td>
-                    </tr>
-                    </tbody>
-                </table>
-                <br/>
-                <div className="button-container">
-                    <button type="button" className="btn btn-dark btn-sm">
-                        Save
-                    </button>
-                </div>
-            </div>
-        </div>
-);
-}
+ */

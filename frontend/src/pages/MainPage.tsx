@@ -1,22 +1,31 @@
 import React from 'react';
 import './MainPage.scss';
-import JobHandler from "../components/JobHandler";
 import DynamicTable from "../components/DynamicTable";
-import data from '../mock-data.json';
 import TaskHandler from "../components/TaskHandler";
 
-type Data = typeof data
 
-
-// Dynamic table
-export default function MainPage({data}: { data: Data }) {
+//button dummy (real compare-button is in JobListHandler
+export default function MainPage() {
 
     return (
         <div className="header">
             <h1>
                 career crack
             </h1>
-            <div>
+            <div className="job-container">
+                <DynamicTable />
+            </div>
+            <button type="submit" className="btn btn-dark btn-lg">COMPARE</button>
+            <br/>
+            <br/>
+            <br/>
+            <TaskHandler />
+        </div>
+    );
+}
+
+/*
+<div>
             <table>
                 <thead>
                 <tr>
@@ -32,10 +41,4 @@ export default function MainPage({data}: { data: Data }) {
                 </tbody>
             </table>
             </div>
-            <div className="job-container">
-                <DynamicTable data={data}/>
-            </div>
-            <TaskHandler />
-        </div>
-    );
-}
+ */

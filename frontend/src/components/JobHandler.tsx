@@ -3,7 +3,11 @@ import {IJob} from "../models/Job";
 import DynamicColumn from "./DynamicColumn";
 import './JobHandler.scss';
 
-
+// SEND LIST-button: All three job lists will be communicated individually via backend to database in own collection
+//onClick={saveList}
+//onClick={addJob} = onClick={updateList}?
+//getListByID - necessary to compare the Lists?
+//remove by listID
 export default function JobHandler() {
 
     const [job, setJob] = useState<string>("");
@@ -34,17 +38,20 @@ export default function JobHandler() {
     };
 
     return (
-        <div>
-            <div className="job-list-container">
+        <div className="column-container">
+            <div className="list-container">
                 {jobList.map((job: IJob, key) => {
                     return <DynamicColumn key={key} job={job} deleteJob={deleteJob}/>;
                 })}
             </div>
-            <div className="job-input">
-                <input type="text" placeholder="Job..." name="job" value={job} onChange={handleChange}/>
+            <div className="input-container">
+                <input type="text" placeholder="Job ..." name="job" value={job} onChange={handleChange}/>
                 <input type="month" name="date" value={date} placeholder="Deadline (in Days)..."
                        onChange={handleChange}/>
                 <button type="submit" className="btn btn-dark btn-sm" onClick={addJob}>Add Job</button>
+            </div>
+            <div>
+                <button type="submit" className="btn btn-dark btn-md">SEND LIST</button>
             </div>
         </div>
     );
