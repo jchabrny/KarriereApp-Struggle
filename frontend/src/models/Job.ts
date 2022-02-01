@@ -1,3 +1,4 @@
-export interface Job {
-    description: string;
+export interface IJob {
+    jobName: string
+    date: string
 }
