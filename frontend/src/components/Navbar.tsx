@@ -15,13 +15,16 @@ return(
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav">
                         <li className="nav-item">
-                            <a className="nav-link active" aria-current="page" href="#">career crack</a>
+                            <a className="nav-link active" aria-current="page" href="/">career crack</a>
                         </li>
                         <li className="nav-item">
                             <a className="nav-link" href="#">job juggler</a>
                         </li>
                         <li className="nav-item">
                             <a className="nav-link" href="#">fierce founder</a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link" href="/agenda">agenda</a>
                         </li>
                     </ul>
                 </div>

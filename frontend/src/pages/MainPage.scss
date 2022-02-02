@@ -2,18 +2,11 @@ h1 {
   font-size: 50px;
 }
 
-.header {
-  margin-left: 500px;
-  margin-right: 500px;
-}
-
-.job-container, .header {
+.header, {
   text-align: center;
-}
-
-.job-container {
   display: flex;
+  align-items: center;
   flex-direction: column;
+  width: 100%;
   gap: 10px;
-  padding: 1rem;
 }

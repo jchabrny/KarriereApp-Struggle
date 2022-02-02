@@ -4,10 +4,10 @@ import DynamicColumn from "./DynamicColumn";
 import './JobHandler.scss';
 
 // SEND LIST-button: All three job lists will be communicated individually via backend to database in own collection
-//onClick={saveList}
-//onClick={addJob} = onClick={updateList}?
+//onClick={saveList} = SEND-button?
+//onClick={addJob}, deleteJob={deleteJob} = onClick={updateList}?
 //getListByID - necessary to compare the Lists?
-//remove by listID
+//remove by listID necessary?
 export default function JobHandler() {
 
     const [job, setJob] = useState<string>("");
@@ -38,7 +38,7 @@ export default function JobHandler() {
     };
 
     return (
-        <div className="column-container">
+        <div className="table-container">
             <div className="list-container">
                 {jobList.map((job: IJob, key) => {
                     return <DynamicColumn key={key} job={job} deleteJob={deleteJob}/>;
