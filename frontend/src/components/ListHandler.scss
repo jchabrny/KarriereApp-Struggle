@@ -1,3 +1,20 @@
+input {
+  border: none;
+  border-bottom-left-radius: 8px;
+  border-top-left-radius: 8px;
+  padding-left: 10px;
+  border: 1px solid lightblue;
+}
+
+.input-container {
+  display: flex;
+}
+
+.input-container button {
+  margin-left: 20px;
+  color: #facf5a;
+}
+
 .delete-button button {
   width: 50px;
   height: 47px;
@@ -33,3 +50,11 @@
   width: 100%;
   height: 100%;
 }
+
+/*
+.job-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+*/

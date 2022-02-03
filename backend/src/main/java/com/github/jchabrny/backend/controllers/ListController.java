@@ -6,21 +6,24 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
 @RequestMapping("api/list")
 public class ListController {
 
     private final ListService listService;
 
-    public ListController(ListService listService) {this.listService = listService; }
+    public ListController(ListService listService) {
+        this.listService = listService; }
 
     //GET
 
     @GetMapping(value = "/getAll")
-    public List<JobList> getAll() {return listService.getAll();}
+    public List<JobList> getAll() { return listService.getAll(); }
 
     @GetMapping(value = "getById/{listId}")
-    public JobList getListById(@PathVariable String listId) {return listService.getListById(listId).get();}
+    public JobList getListById(@PathVariable String listId) {
+        return listService.getListById(listId).get(); }
 
     //ADD
 
@@ -37,5 +40,5 @@ public class ListController {
     // REMOVE
 
     @DeleteMapping(value = "/remove/{listId}")
-    public void deleteListById(@PathVariable String listId) {listService.deleteListById(listId);}
+    public void deleteListById(@PathVariable String listId) { listService.deleteListById(listId); }
 }

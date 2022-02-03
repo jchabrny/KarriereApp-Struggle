@@ -1,11 +1,12 @@
 import React from "react";
-import DynamicTable from "./DynamicTable";
-import './JobListHandler.scss';
+import ListGallery from "./ListGallery";
+import './CompareHandler.scss';
+
 
 // With press button "start comparison" the three lists will be fed to database and then compared
-export default function JobListHandler(){
+export default function CompareHandler(){
     return (
-       // <DynamicTable />
+       // <ListGallery />
     <div className="button-container">
         <button type="submit" className="btn btn-dark btn-sm">COMPARE</button>
     </div>
