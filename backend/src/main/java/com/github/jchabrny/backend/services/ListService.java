@@ -8,29 +8,35 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
+
 @Service
 public class ListService {
 
     @Autowired
     ListRepository listRepository;
 
-    public List<JobList> getAll() {
+    public List<JobList> getAllLists() {
+
         return listRepository.findAll();
     }
 
     public void deleteListById(String listId) {
+
         listRepository.deleteById(listId);
     }
 
     public Optional<JobList> getListById(String listId) {
+
         return listRepository.findById(listId);
     }
 
     public JobList updateList(JobList updatedList) {
+
         return listRepository.save(updatedList);
     }
 
     public JobList saveNewList(JobList newList) {
+
         return listRepository.insert(newList);
     }
 }

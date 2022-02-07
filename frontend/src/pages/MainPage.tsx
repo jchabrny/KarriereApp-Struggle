@@ -15,30 +15,10 @@ export default function MainPage() {
             <h1>
                 career crack
             </h1>
+                <p>Choose a category and compare your job application lists</p>
             <br/>
                 <ListGallery />
-            <br/>
             </div>
-            <button type="submit" className="btn btn-dark btn-lg">COMPARE</button>
         </div>
     );
 }
-
-/*
-<div>
-            <table>
-                <thead>
-                <tr>
-                    <th>Pharma</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>
-            <ListHandler />
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-            </div>
- */

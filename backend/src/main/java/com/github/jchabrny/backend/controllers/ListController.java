@@ -14,31 +14,45 @@ public class ListController {
     private final ListService listService;
 
     public ListController(ListService listService) {
-        this.listService = listService; }
+        this.listService = listService;
+    }
 
     //GET
 
     @GetMapping(value = "/getAll")
-    public List<JobList> getAll() { return listService.getAll(); }
+    public List<JobList> getAllLists() {
+
+        return listService.getAllLists();
+    }
 
     @GetMapping(value = "getById/{listId}")
     public JobList getListById(@PathVariable String listId) {
-        return listService.getListById(listId).get(); }
+
+        return listService.getListById(listId).get();
+    }
 
     //ADD
 
-    @PutMapping (value = "/saveNew")
+    @PutMapping(value = "/saveNew")
     public JobList saveNewList(@RequestBody JobList newJobList) {
+
         return listService.saveNewList(newJobList);
     }
 
-    @PatchMapping (value = "/update")
+    @PatchMapping(value = "/update")
     public JobList updateList(@RequestBody JobList updatedList) {
+
         return listService.updateList(updatedList);
     }
 
     // REMOVE
 
     @DeleteMapping(value = "/remove/{listId}")
-    public void deleteListById(@PathVariable String listId) { listService.deleteListById(listId); }
+    public void deleteListById(@PathVariable String listId) {
+
+        listService.deleteListById(listId);
+    }
 }
+
+
+

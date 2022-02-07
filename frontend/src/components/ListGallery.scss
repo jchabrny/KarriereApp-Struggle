@@ -1,27 +1,11 @@
+.list-gallery {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
 input {
   margin: 5px;
   border-radius: 4px;
   font-size: 18px;
 }
-
-table {
-  border-collapse: collapse;
-  width: 100%;
-}
-
-th, td {
-  border: 1px solid whitesmoke;
-  text-align: center;
-  padding: 8px;
-  font-size: 32px;
-}
-
-th {
-  background-color: #bde4f4;
-}
-
-td {
-  background-color: #e4f1fe;
-}
-
-p {font-size: 24px;}
