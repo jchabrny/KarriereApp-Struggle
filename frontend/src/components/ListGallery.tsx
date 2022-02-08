@@ -1,9 +1,10 @@
 import React, {useEffect, useState} from "react";
 import './ListGallery.scss';
-import {getAllLists} from "../services/BackendService";
+import {getAllLists, updateList} from "../services/BackendService";
 import ListCategory from "./ListCategory";
 import CompareHandler from "./CompareHandler";
 import {IJobList} from "../models/JobList";
+import {IJob} from "../models/Job";
 
 
 export default function ListGallery() {
@@ -17,15 +18,41 @@ export default function ListGallery() {
             })
     }, [])
 
+    const addItem = (newItem: IJob, listId: string): void => {
+        /*setJobListsGallery((jobListGallery) =>
+             jobListGallery.map((jobList) => {
+                 if (jobList.listId === listId) {
+                     return {
+                         ...jobList, listItems: jobList.listItems ? [...jobList.listItems, newItem] : [newItem]
+                     }
+                 } else {
+                     return jobList;
+                 }
+             })
+         )
+
+         */
+        const jobList = jobListsGallery.find((jobList) => jobList.listId === listId)
+        if (jobList) {
+            updateList({...jobList, listItems: jobList.listItems ? [...jobList.listItems, newItem] : [newItem]})
+                .then(() => {
+                    getAllLists()
+                        .then((jobLists) => {
+                            setJobListsGallery(jobLists)
+                        })
+                })
+        }
+    }
+
     return (
         <div>
-        <div className="list-gallery">
-            {jobListsGallery.map((listCategory, key) => {
-                return <ListCategory jobList={listCategory} key={key}/>
-            })}
-        </div>
-        <br/>
-        <CompareHandler />
+            <div className="list-gallery">
+                {jobListsGallery.map((listCategory, key) => {
+                    return <ListCategory jobList={listCategory} addItem={addItem} key={key}/>
+                })}
+            </div>
+            <br/>
+            <CompareHandler/>
         </div>
     );
 }

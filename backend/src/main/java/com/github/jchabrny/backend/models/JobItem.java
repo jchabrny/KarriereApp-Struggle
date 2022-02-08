@@ -13,5 +13,5 @@ public class JobItem {
 
     @Id
     private String jobName;
-    private String jobDate;
+    private String date;
 }

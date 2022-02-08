@@ -7,29 +7,30 @@ import {IJob} from "../models/Job";
 
 interface ListCategoryProps {
     jobList: IJobList
+    addItem: (newItem: IJob, listId: string) => void
 }
 
 
 export default function ListCategory(props: ListCategoryProps) {
 
-   const {jobList} = props;
+    const {jobList, addItem} = props;
+
 
     const [itemName, setItemName] = useState<string>("");
     const [itemDate, setItemDate] = useState<string>("");
-    const [listCategory, setListCategory] = useState<IJob[]>([]);
 
 
     const handleChange = (event: ChangeEvent<HTMLInputElement>): void => {
-        if (event.target.value === "itemName") {
-            setItemName(event.target.value) }
-        else {
+        if (event.target.name === "itemName") {
+            setItemName(event.target.value)
+        } else {
             setItemDate(event.target.value)
         }
     };
 
-    const addItem = (): void => {
-        const newItem = { jobName: itemName, date: itemDate};
-        setListCategory([...listCategory, newItem]);
+    const handleAdd = (): void => {
+        const newItem = {jobName: itemName, date: itemDate};
+        addItem(newItem, jobList.listId)
     };
 
     const deleteItem = (): void => {
@@ -46,9 +47,10 @@ export default function ListCategory(props: ListCategoryProps) {
                 })}
             </ul>
             <div className="input-container">
-            <input type="text" placeholder="Enter a job..." name="itemName" value={itemName} onChange={handleChange}/>
-            <input type="month" name="itemDate" value={itemDate} onChange={handleChange}/>
-            <button className="btn btn-dark btn-md"  onClick={addItem}>Add job</button>
+                <input type="text" placeholder="Enter a job..." name="itemName" value={itemName}
+                       onChange={handleChange}/>
+                <input type="month" name="itemDate" value={itemDate} onChange={handleChange}/>
+                <button className="btn btn-dark btn-md" onClick={handleAdd}>Add job</button>
             </div>
         </div>
     )
