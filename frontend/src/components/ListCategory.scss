@@ -4,6 +4,7 @@
 
   ul {
    list-style-type: none;
+    margin: 0 auto;
   }
 }
 
@@ -15,6 +16,7 @@ input {
 }
 
 .input-container {
+  margin-top: 25px;
   display: flex;
 }
 
@@ -23,25 +25,8 @@ input {
   color: #facf5a;
 }
 
-/*
-.job {
-  width: 500px;
-  margin: 15px;
-  display: flex;
+input-container .btn:hover {
+  background-color: whitesmoke;
+  color: black;
 }
 
-.job-content {
-  flex: 80%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.job-content span {
-  display: grid;
-  place-items: center;
-  font-size: 28px;
-  width: 100%;
-  height: 100%;
-}
- */

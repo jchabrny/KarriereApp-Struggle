@@ -1,0 +1,98 @@
+form {
+  display: flex;
+}
+
+.task-list {
+  line-height: 1.7;
+  list-style: circle;
+  padding-left: 1.1em;
+}
+
+.task-count {
+  margin: 0;
+  color: #1c7293;
+  font-size: 1rem;
+}
+
+.active-task {
+  font-weight: 700;
+}
+
+.task-name {
+  cursor: pointer;
+}
+
+.task-name:hover {
+  opacity: 0.7;
+}
+
+.btn-create {
+  font-size: 1.5rem;
+  font-weight: 600;
+  border: 0;
+  padding: 0;
+  margin-right: .25em;
+  transition: opacity 250ms ease-in;
+}
+
+.btn-task:hover {
+  opacity: 0.7;
+}
+
+.new {
+  background: transparent;
+  border: 0;
+  outline-color: #facf5a;
+  order: 2;
+  padding: 0.25rem;
+}
+
+.new:focus::placeholder {
+  opacity: 0.2;
+}
+
+[type="checkbox"] {
+  opacity: 0;
+  position: absolute;
+}
+
+.memo-body {
+  position: relative;
+}
+
+.memos {
+  line-height: 2;
+}
+
+.custom-checkbox {
+  --size: 0.75em;
+  display: inline-block;
+  width: var(--size);
+  height: var(--size);
+  margin-right: var(--size);
+  cursor: pointer;
+  border: 2px solid #1c7293;
+  border-radius: 50%;
+  transform: scale(1);
+  transition: transform 200ms ease-in-out;
+}
+
+.memo:hover .custom-checkbox,
+[type="checkbox"]:focus + label .custom-checkbox {
+ transform: scale(1.2);
+}
+
+[type="checkbox"]:checked + label .custom-checkbox {
+  background: #1c7293;
+  box-shadow: inset 0 0 0 2px white;
+}
+
+[type="checkbox"]:checked + label {
+  opacity: 0.5;
+}
+
+.delete-content {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 60px;
+}

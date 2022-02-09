@@ -11,13 +11,20 @@ export default function MainPage() {
         <div>
             <Navbar/>
             <div className="header">
-            <br/>
-            <h1>
-                career crack
-            </h1>
-                <p>Choose a category and compare your job application lists</p>
-            <br/>
-                <ListGallery />
+                <br/>
+                <h1>
+                    career crack
+                </h1>
+                <h4>Choose a category and compare your job application lists. </h4>
+                <p>You can compare your success ...</p>
+                <ul>
+                    <li>... in different branches</li>
+                    <li> or cities,</li>
+                    <li>... regarding company sizes</li>
+                    <li> or application formats.</li>
+                </ul>
+                <p>Take your pick and get started !</p>
+                <ListGallery/>
             </div>
         </div>
     );

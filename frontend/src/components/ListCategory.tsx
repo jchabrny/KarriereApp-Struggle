@@ -1,4 +1,5 @@
 import React, {ChangeEvent, useState} from "react";
+import ListHandler from "./ListHandler";
 import Job from "./Job";
 import {IJobList} from "../models/JobList";
 import './ListCategory.scss';
@@ -33,17 +34,26 @@ export default function ListCategory(props: ListCategoryProps) {
         addItem(newItem, jobList.listId)
     };
 
-    const deleteItem = (): void => {
+    const handleDelete = (): void => {
 
     };
 
+    /*
+     const handleDelete = (itemNameToDelete: string): void => {
+        deleteItem(
+            jobList.listId.filter((item) => {
+            return item.itemName !== itemNameToDelete
+        })
+        );
+    };
+     */
+
     return (
         <div className="list-category">
-            <h3>{jobList.listName}</h3>
-            <p>Job 1</p>
+            <ListHandler jobList={jobList} />
             <ul className="jobs">
                 {jobList.listItems?.map((job, key) => {
-                    return <Job key={key} job={job} deleteJob={deleteItem}/>
+                    return <Job key={key} job={job} deleteJob={handleDelete}/>
                 })}
             </ul>
             <div className="input-container">

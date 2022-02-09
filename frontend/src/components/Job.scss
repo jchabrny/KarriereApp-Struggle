@@ -1,4 +1,25 @@
-.delete-button button {
+.job {
+  margin-top: 15px;
+}
+
+.job-content {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.job-content span {
+  margin-top: 5px;
+  place-items: center;
+  padding: 3px;
+}
+
+.job-content p {
+  font-size: 28px;
+  color: #1c7293;
+}
+
+.delete-button {
   width: 50px;
   height: 47px;
   border-bottom-right-radius: 8px;
@@ -8,7 +29,7 @@
   cursor: pointer;
 }
 
-.delete-button button:hover {
+.delete-button:hover {
   background-color: whitesmoke;
   color: black;
 }

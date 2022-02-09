@@ -44,6 +44,21 @@ export default function ListGallery() {
         }
     }
 
+    /*
+    const deleteItem = (itemToDelete: IJob, listId: string): void => {
+    const jobList = jobListsGallery.find((jobList) => jobList.listId === listId)
+    if (jobList) {
+
+    .then(() => {
+                    getAllLists()
+                        .then((jobLists) => {
+                            setJobListsGallery(jobLists)
+                        })
+                })
+        }
+    }
+     */
+
     return (
         <div>
             <div className="list-gallery">
@@ -51,6 +66,7 @@ export default function ListGallery() {
                     return <ListCategory jobList={listCategory} addItem={addItem} key={key}/>
                 })}
             </div>
+            <br/>
             <br/>
             <CompareHandler/>
         </div>

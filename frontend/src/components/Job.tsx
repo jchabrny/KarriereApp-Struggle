@@ -4,20 +4,26 @@ import './Job.scss';
 
 interface JobProps {
     job: IJob;
-    deleteJob(jobNameToDelete: string): void;
+
+    deleteJob(itemNameToDelete: string): void;
 }
 
 export default function Job(props: JobProps) {
 
     const {job, deleteJob} = props;
 
-        return(
-            <div className="job">
-                <div className="content">
+    return (
+        <div className="job">
+            <div className="job-content">
+                <p>
                     <span>{job.jobName}</span>
                     <span>{job.date}</span>
-                </div>
-                <button onClick={() => {deleteJob(job.jobName);}}>X</button>
+                </p>
+                <button className="delete-button" onClick={() => {
+                    deleteJob(job.jobName);
+                }}>X
+                </button>
             </div>
-        );
-    }
+        </div>
+    );
+}
