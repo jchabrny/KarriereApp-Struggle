@@ -12,15 +12,23 @@ export default function ListHandler(props: ListHandlerProps) {
 
     return (
         <div>
-            <form className="content">
-                <label>List Title: </label>
-                <input type="text"
-                       placeholder="Enter title" />
-            </form>
-            <br />
-            <h3>{jobList.listName}</h3>
+            <div className="new list-creator">
+                <form action="">
+                    <input type="text"
+                           className="new list"
+                           placeholder="Enter new list"
+                           aria-label="new list"
+                    />
+                    <button className="btn-create" aria-label="create new list">+</button>
+                </form>
+            </div>
         </div>
 
     )
 
 }
+
+/*
+<br/>
+<h3>{jobList.listName}</h3>
+ */

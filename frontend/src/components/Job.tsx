@@ -24,6 +24,29 @@ export default function Job(props: JobProps) {
                 }}>X
                 </button>
             </div>
+            <div className="job-status">
+                <div className="status">
+                <input type="checkbox"
+                       id="ka" />
+                <label htmlFor="ka">NR
+                    <span className="checkbox ka"></span>
+                </label>
+                </div>
+                <div className="status">
+                <input type="checkbox"
+                       id="no" />
+                <label htmlFor="no">
+                    No<span className="checkbox no"></span>
+                </label>
+                </div>
+                <div className="status">
+                <input type="checkbox"
+                       id="yes" />
+                <label htmlFor="yes">
+                    Yes<span className="checkbox yes"></span>
+                </label>
+                </div>
+            </div>
         </div>
     );
 }
