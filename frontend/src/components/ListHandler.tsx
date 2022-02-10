@@ -22,6 +22,8 @@ export default function ListHandler(props: ListHandlerProps) {
                     <button className="btn-create" aria-label="create new list">+</button>
                 </form>
             </div>
+            <br />
+            <h3>{jobList.listName}</h3>
         </div>
 
     )
@@ -30,5 +32,5 @@ export default function ListHandler(props: ListHandlerProps) {
 
 /*
 <br/>
-<h3>{jobList.listName}</h3>
+
  */

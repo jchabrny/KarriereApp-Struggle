@@ -4,8 +4,8 @@ import './Job.scss';
 
 interface JobProps {
     job: IJob;
+    deleteJob: (jobId: string) => void
 
-    deleteJob(itemNameToDelete: string): void;
 }
 
 export default function Job(props: JobProps) {
@@ -20,31 +20,31 @@ export default function Job(props: JobProps) {
                     <span>{job.date}</span>
                 </p>
                 <button className="delete-button" onClick={() => {
-                    deleteJob(job.jobName);
+                    deleteJob(job.jobId);
                 }}>X
                 </button>
             </div>
             <div className="job-status">
                 <div className="status">
-                <input type="checkbox"
-                       id="ka" />
-                <label htmlFor="ka">NR
-                    <span className="checkbox ka"></span>
-                </label>
+                    <input type="checkbox"
+                           id="ka"/>
+                    <label htmlFor="ka">NR
+                        <span className="checkbox ka"></span>
+                    </label>
                 </div>
                 <div className="status">
-                <input type="checkbox"
-                       id="no" />
-                <label htmlFor="no">
-                    No<span className="checkbox no"></span>
-                </label>
+                    <input type="checkbox"
+                           id="no"/>
+                    <label htmlFor="no">
+                        No<span className="checkbox no"></span>
+                    </label>
                 </div>
                 <div className="status">
-                <input type="checkbox"
-                       id="yes" />
-                <label htmlFor="yes">
-                    Yes<span className="checkbox yes"></span>
-                </label>
+                    <input type="checkbox"
+                           id="yes"/>
+                    <label htmlFor="yes">
+                        Yes<span className="checkbox yes"></span>
+                    </label>
                 </div>
             </div>
         </div>

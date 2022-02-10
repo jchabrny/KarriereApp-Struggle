@@ -3,23 +3,21 @@ import ListHandler from "./ListHandler";
 import Job from "./Job";
 import {IJobList} from "../models/JobList";
 import './ListCategory.scss';
-import {IJob} from "../models/Job";
+import {INewJob} from "../models/NewJob";
 
 
 interface ListCategoryProps {
     jobList: IJobList
-    addItem: (newItem: IJob, listId: string) => void
+    addItem: (newItem: INewJob, listId: string) => void
+    deleteItem: (jobId: string, listId: string) => void
 }
-
 
 export default function ListCategory(props: ListCategoryProps) {
 
-    const {jobList, addItem} = props;
-
+    const {jobList, addItem, deleteItem} = props;
 
     const [itemName, setItemName] = useState<string>("");
     const [itemDate, setItemDate] = useState<string>("");
-
 
     const handleChange = (event: ChangeEvent<HTMLInputElement>): void => {
         if (event.target.name === "itemName") {
@@ -34,23 +32,13 @@ export default function ListCategory(props: ListCategoryProps) {
         addItem(newItem, jobList.listId)
     };
 
-    const handleDelete = (): void => {
-
+    const handleDelete = (jobId: string): void => {
+        deleteItem(jobId, jobList.listId);
     };
-
-    /*
-     const handleDelete = (itemNameToDelete: string): void => {
-        deleteItem(
-            jobList.listId.filter((item) => {
-            return item.itemName !== itemNameToDelete
-        })
-        );
-    };
-     */
 
     return (
         <div className="list-category">
-            <ListHandler jobList={jobList} />
+            <ListHandler jobList={jobList}/>
             <ul className="jobs">
                 {jobList.listItems?.map((job, key) => {
                     return <Job key={key} job={job} deleteJob={handleDelete}/>
@@ -65,3 +53,4 @@ export default function ListCategory(props: ListCategoryProps) {
         </div>
     )
 }
+
