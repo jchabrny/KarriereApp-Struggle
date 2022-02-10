@@ -4,7 +4,6 @@ import ListGallery from "../components/ListGallery";
 import Navbar from "../components/Navbar";
 
 
-//button dummy (real compare-button is in CompareHandler
 export default function MainPage() {
 
     return (

@@ -44,11 +44,10 @@ export default function ListGallery() {
         }
     }
 
-    /*
     const deleteItem = (itemToDelete: IJob, listId: string): void => {
     const jobList = jobListsGallery.find((jobList) => jobList.listId === listId)
     if (jobList) {
-
+removeItem({})
     .then(() => {
                     getAllLists()
                         .then((jobLists) => {
@@ -57,7 +56,6 @@ export default function ListGallery() {
                 })
         }
     }
-     */
 
     return (
         <div>

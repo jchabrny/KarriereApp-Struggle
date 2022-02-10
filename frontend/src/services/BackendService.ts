@@ -9,5 +9,9 @@ export const getAllLists =(): Promise<IJobList[]> => axios.get(`api/list/getAll`
 export const updateList = (updatedList: IJobList): Promise<IJobList> => axios.patch(`/api/list/update`,
     updatedList).then(response => response.data)
 
+export const removeItem = (listId: string, jobId: string): Promise<IJobList> => axios.delete(`api/list/${listId}/removeItem/${jobId}`)
+    .then(response => response.data)
+
+
 
 
