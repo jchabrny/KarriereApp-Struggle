@@ -1,5 +1,4 @@
 import React, {ChangeEvent, useState} from "react";
-import ListHandler from "./ListHandler";
 import Job from "./Job";
 import {IJobList} from "../models/JobList";
 import './ListCategory.scss';
@@ -38,18 +37,21 @@ export default function ListCategory(props: ListCategoryProps) {
 
     return (
         <div className="list-category">
-            <ListHandler jobList={jobList}/>
-            <ul className="jobs">
-                {jobList.listItems?.map((job, key) => {
-                    return <Job key={key} job={job} deleteJob={handleDelete}/>
-                })}
-            </ul>
+            <h3>{jobList.listName}</h3>
             <div className="input-container">
                 <input type="text" placeholder="Enter a job..." name="itemName" value={itemName}
                        onChange={handleChange}/>
                 <input type="month" name="itemDate" value={itemDate} onChange={handleChange}/>
                 <button className="btn btn-dark btn-md" onClick={handleAdd}>Add job</button>
             </div>
+            <br />
+            <ul className="jobs">
+                {jobList.listItems?.map((job, key) => {
+                    return <Job key={key} job={job} deleteJob={handleDelete}/>
+                })}
+            </ul>
+            <br />
+            <br />
         </div>
     )
 }

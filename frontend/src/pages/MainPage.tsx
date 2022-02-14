@@ -4,6 +4,7 @@ import ListGallery from "../components/ListGallery";
 import Navbar from "../components/Navbar";
 
 
+
 export default function MainPage() {
 
     return (
@@ -23,9 +24,8 @@ export default function MainPage() {
                     <li> or application formats.</li>
                 </ul>
                 <h5>Take your pick and get started !</h5>
-                <p>[NR=No Reply, No=Rejection, Yes=Invitation]</p>
                 <br />
-                <ListGallery/>
+                <ListGallery />
             </div>
         </div>
     );

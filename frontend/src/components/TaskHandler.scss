@@ -51,6 +51,14 @@ form {
   opacity: 0.2;
 }
 
+.delete-content {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 60px;
+}
+
+/*
+
 [type="checkbox"] {
   opacity: 0;
   position: absolute;
@@ -91,8 +99,4 @@ form {
   opacity: 0.5;
 }
 
-.delete-content {
-  display: flex;
-  justify-content: space-evenly;
-  margin-bottom: 60px;
-}
+ */

@@ -26,9 +26,27 @@ export default function Job(props: JobProps) {
             </div>
             <div className="job-status">
                 <div className="status">
+                    <input type="checkbox" id="status" name="noReply-status" />
+                        <label htmlFor="status">No reply</label>
+                </div>
+                <div className="status">
+                    <input type="checkbox" id="status" name="rejection-status" />
+                    <label htmlFor="status">Rejection</label>
+                </div>
+                <div className="status">
+                    <input type="checkbox" id="status" name="invitation-status" />
+                    <label htmlFor="status">Invitation</label>
+                </div>
+            </div>
+        </div>
+    );
+}
+
+/*
+         <div className="status">
                     <input type="checkbox"
                            id="ka"/>
-                    <label htmlFor="ka">NR
+                    <label htmlFor="ka">No Reply
                         <span className="checkbox ka"></span>
                     </label>
                 </div>
@@ -36,17 +54,14 @@ export default function Job(props: JobProps) {
                     <input type="checkbox"
                            id="no"/>
                     <label htmlFor="no">
-                        No<span className="checkbox no"></span>
+                        Rejection<span className="checkbox no"></span>
                     </label>
                 </div>
                 <div className="status">
                     <input type="checkbox"
                            id="yes"/>
                     <label htmlFor="yes">
-                        Yes<span className="checkbox yes"></span>
+                        Invitation<span className="checkbox yes"></span>
                     </label>
                 </div>
-            </div>
-        </div>
-    );
-}
+ */
