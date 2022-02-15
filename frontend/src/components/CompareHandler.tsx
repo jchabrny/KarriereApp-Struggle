@@ -1,23 +1,18 @@
 import React from "react";
 import './CompareHandler.scss';
 
-
-// With press button "start comparison" the three lists will be fed to database and then compared
 export default function CompareHandler(){
 
     /*
-    ArrayLength
 
-    <button id="array-length">Compare </button>
-    const arrayLength = document.getElementById('array-length');
-    arrayLength.addEventListener('click', length);
+const [statusList, setStatusList] = useState<IJob.status[]>([]);?????
 
-    function length()
+const handleCompare = (e: ChangeEvent<HTMLInputElement>): void =>
+        setStatusList(parseInt(e.currentTarget.value));
 
-    const firstArray = [job1, job4, job5];
-    console.log(firstArray.length);
-    const secondArray = [job2, job3, job6, job7]
-
+const chooseWinner = (IJob.status[]: []): void => {
+const bigNum = Math.max(...statusList)
+}
 
      */
 

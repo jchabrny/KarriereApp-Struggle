@@ -29,11 +29,3 @@ export default function MainPage() {
         </div>
     );
 }
-
-/*
-   <br/>
-                <div className="progress">
-                    <div className="progress-value">
-                    </div>
-                </div>
- */

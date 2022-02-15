@@ -1,5 +1,6 @@
 import React, {ChangeEvent, useState} from "react";
 import Job from "./Job";
+import ProgressBar from "./ProgressBar";
 import {IJobList} from "../models/JobList";
 import './ListCategory.scss';
 import {INewJob} from "../models/NewJob";
@@ -57,12 +58,14 @@ export default function ListCategory(props: ListCategoryProps) {
 
     return (
         <div className="list-category">
+            <p>{score}</p>
+            <ProgressBar score={score}/>
+            <br />
            <span>
                <h3>{jobList.listName}</h3>
-               <p>{score}</p>
-            <button className="delete-button" onClick={() => {
-                deleteList(jobList.listId);
-            }}>X
+                     <button className="delete-button" onClick={() => {
+                         deleteList(jobList.listId);
+                     }}>X
             </button>
            </span>
             <div className="input-container">

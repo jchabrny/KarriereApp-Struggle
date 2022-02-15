@@ -1,4 +1,4 @@
-import React, {ChangeEvent, FormEvent, useEffect, useState} from "react";
+import React, {ChangeEvent, useEffect, useState} from "react";
 import './ListGallery.scss';
 import {getAllLists, removeItem, removeList, saveNewList, updateList} from "../services/BackendService";
 import ListCategory from "./ListCategory";
@@ -55,13 +55,13 @@ export default function ListGallery() {
     }
 
     const handleNewList = (event: ChangeEvent<HTMLInputElement>): void => {
-            setListName(event.target.value)
+        setListName(event.target.value)
         setListId(event.target.value)
     };
 
     const handleAddList = (): void => {
         const newJobList: INewJobList = {
-           listName: listName
+            listName: listName
         }
         saveNewList(newJobList)
             .then(() => {
@@ -96,7 +96,7 @@ export default function ListGallery() {
                     <button className="btn-create" aria-label="create new list" onClick={handleAddList}>+</button>
                 </form>
             </div>
-            <br />
+            <br/>
             <div className="list-gallery">
                 {jobListsGallery.map((listCategory, key) => {
                     return <ListCategory jobList={listCategory} addItem={addItem}
