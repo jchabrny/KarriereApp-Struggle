@@ -13,8 +13,8 @@ import org.springframework.data.annotation.Id;
 public class JobItem {
 
     @Id
-
     private String jobId;
     private String jobName;
     private String date;
+    private int status;
 }
