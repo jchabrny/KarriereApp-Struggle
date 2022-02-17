@@ -1,4 +1,4 @@
-import React, {ChangeEvent, useEffect, useState} from "react";
+import React, {ChangeEvent, FormEvent, FormEventHandler, useEffect, useState} from "react";
 import './ListGallery.scss';
 import {getAllLists, removeItem, removeList, saveNewList, updateList} from "../services/BackendService";
 import ListCategory from "./ListCategory";
@@ -64,7 +64,8 @@ export default function ListGallery() {
         setListName(event.target.value)
     };
 
-    const handleAddList = (): void => {
+    const handleAddList = (event: FormEvent<HTMLFormElement>): void => {
+        event.preventDefault()
         const newJobList: INewJobList = {
             listName: listName
         }
@@ -107,14 +108,14 @@ export default function ListGallery() {
     return (
         <div>
             <div className="new list-creator">
-                <form action="">
+                <form onSubmit={handleAddList}>
                     <input type="text"
                            className="new list"
                            placeholder="Enter new list"
                            aria-label="new list"
                            onChange={handleNewList}
                     />
-                    <button className="btn-create" aria-label="create new list" onClick={handleAddList}>+</button>
+                    <button type="submit" className="btn-create" aria-label="create new list">+</button>
                 </form>
             </div>
             <br/>
