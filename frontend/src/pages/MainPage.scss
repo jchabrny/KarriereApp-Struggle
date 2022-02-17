@@ -1,0 +1,60 @@
+h1 {
+  font-size: 50px;
+  color: #1c7293;
+}
+
+p {
+  font-size: 22px;
+}
+
+ul {
+  color: #5d697a;
+  list-style-type: none;
+  font-size: 18px;
+}
+
+.header {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+}
+
+/*
+
+.container {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.progress {
+  background: rgba(255,255,255,0.1);
+  justify-content: flex-start;
+  border-radius: 100px;
+  align-items: center;
+  position: relative;
+  padding: 0 5px;
+  display: flex;
+  width: 500px;
+}
+
+.progress-value {
+  animation: load 3s normal forwards;
+  box-shadow: 0 10px 40px -10px #1c7293;
+  border-radius: 100px;
+  background: #1c7293;
+  height: 30px;
+  width: 0;
+}
+
+@keyframes load {
+  0% { width: 0; }
+  100% { width: 68%; }
+}
+
+ */

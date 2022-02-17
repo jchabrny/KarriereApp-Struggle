@@ -1,0 +1,32 @@
+.list-category {
+  display: flex;
+  flex-direction: column;
+
+  ul {
+   list-style-type: none;
+    margin: 0 auto;
+  }
+}
+
+input {
+  border-bottom-left-radius: 8px;
+  border-top-left-radius: 8px;
+  padding-left: 10px;
+  border: 1px solid lightblue;
+}
+
+.input-container {
+  margin-top: 25px;
+  display: flex;
+}
+
+.input-container button {
+  margin-left: 20px;
+  color: #facf5a;
+}
+
+input-container .btn:hover {
+  background-color: whitesmoke;
+  color: black;
+}
+
