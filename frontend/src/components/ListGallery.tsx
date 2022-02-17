@@ -102,15 +102,10 @@ export default function ListGallery() {
            return 0;
        })
         setWinningListId(listScore[0].jobListId)
-        console.log(listScore)
     }
 
     return (
         <div>
-            <div className="compare-button-container">
-                <button type="submit" className="btn btn-lg">COMPARE</button>
-            </div>
-            <br />
             <div className="new list-creator">
                 <form action="">
                     <input type="text"

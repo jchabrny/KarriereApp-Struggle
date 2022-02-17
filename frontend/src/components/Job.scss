@@ -1,5 +1,5 @@
 .job {
-  margin-top: 15px;
+  margin: 15px;
   display: flex;
   flex-direction: row;
 }
@@ -12,7 +12,6 @@
 
 .job-content span {
   place-items: center;
-  padding: 3px;
 }
 
 .job-content p {
@@ -31,6 +30,7 @@
   background-color: black;
   transition: 0.3s;
   cursor: pointer;
+  box-shadow: 4px 2px 2px lightgrey;
 }
 
 .delete-button:hover {

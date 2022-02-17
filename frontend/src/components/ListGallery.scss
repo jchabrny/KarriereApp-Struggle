@@ -1,24 +1,3 @@
-.compare-button-container {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-.compare-button-container .btn {
-  background-color: #facf5a;
-  color:  #1c7293;
-  border-color: #1c7293;
-  padding: 10px;
-  border-radius: 4px;
-  width: 20%;
-  transition: 0.3s;
-}
-
-.compare-button-container .btn:hover {
-  background-color: #1c7293;
-  color: whitesmoke;
-  opacity: 0.9;
-}
-
 .list-gallery {
   display: flex;
   flex-direction: column;

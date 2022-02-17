@@ -3,12 +3,17 @@
   flex-direction: row;
   border: 2px solid whitesmoke;
   border-radius: 10px;
-  padding: 15px;
+  padding: 20px;
   background: linear-gradient(10deg, #b4c0d9 20%, #d9e4fa 100%);
+  box-shadow: 6px 3px 3px darkgrey;
 
   ul {
     list-style-type: none;
     margin: 0 auto;
+  }
+
+  button {
+    margin-bottom: 15px;
   }
 }
 
@@ -18,7 +23,7 @@
 }
 
 .input-container input {
-  padding: 8px;
+  padding: 6px;
   border: 1px solid lightblue;
 }
 
@@ -28,10 +33,23 @@
 
 .input-container button {
   color: #facf5a;
+  margin-top: 10px;
   margin-left: 15px;
   transition: 0.3s;
+  box-shadow: 4px 2px 2px lightgrey;
 }
 
 .input-container .btn:hover {
   opacity: 0.6;
+}
+
+.jobs .list-group-item {
+  padding: 0;
+  border: none;
+}
+
+.scroll-div {
+  margin-top: 5px;
+  height: 4em;
+  overflow: auto;
 }

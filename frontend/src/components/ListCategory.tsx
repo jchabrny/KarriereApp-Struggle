@@ -4,8 +4,7 @@ import ProgressBar from "./ProgressBar";
 import {IJobList} from "../models/JobList";
 import './ListCategory.scss';
 import {INewJob} from "../models/NewJob";
-import { FaArchive } from 'react-icons/fa';
-import { FaTrophy } from 'react-icons/fa';
+import {FaArchive, FaTrophy} from 'react-icons/fa';
 
 
 interface ListCategoryProps {
@@ -54,13 +53,11 @@ export default function ListCategory(props: ListCategoryProps) {
     return (
         <div className="list-category">
             <span className="list-head-container">
-                <p>{score}</p>
-                {showTrophy&& <FaTrophy />}
             <ProgressBar score={score}/>
-               <h3>{jobList.listName}</h3>
+               <h3>{showTrophy && <FaTrophy color="#AC7D0C"/>}{jobList.listName}</h3>
                      <button className="delete-button" onClick={() => {
                          deleteList(jobList.listId);
-                     }}><FaArchive />
+                     }}><FaArchive/>
             </button>
                  </span>
             <div className="jobs">
@@ -70,12 +67,16 @@ export default function ListCategory(props: ListCategoryProps) {
                     <input type="month" name="itemDate" value={itemDate} onChange={handleChange}/>
                     <button className="btn btn-dark btn-md" onClick={handleAdd}>Add job</button>
                 </div>
-                <br/>
-                <ul>
-                    {jobList.listItems?.map((job, key) => {
-                        return <Job key={key} job={job} deleteJob={handleDelete} updateStatus={updateScore}/>
-                    })}
-                </ul>
+                <div className="scroll-div">
+                    <ul className="list-group">
+                        <li className="list-group-item">
+                            {jobList.listItems?.map((job, key) => {
+                                return <Job key={key} job={job} deleteJob={handleDelete}
+                                            updateStatus={updateScore}/>
+                            })}
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     )

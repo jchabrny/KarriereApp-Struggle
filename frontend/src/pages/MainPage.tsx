@@ -23,7 +23,6 @@ export default function MainPage() {
                     <li> or application formats.</li>
                 </ul>
                 <h5>Take your pick and get started !</h5>
-                <br/>
                 <ListGallery/>
             </div>
         </div>
