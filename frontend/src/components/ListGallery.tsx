@@ -1,4 +1,4 @@
-import React, {ChangeEvent, FormEvent, useEffect, useState} from "react";
+import React, {ChangeEvent, FormEvent, FormEventHandler, useEffect, useState} from "react";
 import './ListGallery.scss';
 import {getAllLists, removeItem, removeList, saveNewList, updateList} from "../services/BackendService";
 import ListCategory from "./ListCategory";
@@ -7,11 +7,9 @@ import {IJobList} from "../models/JobList";
 import {INewJobList} from "../models/NewJobList";
 import {INewJob} from "../models/NewJob";
 
-
 export default function ListGallery() {
 
     const [listName, setListName] = useState<string>("");
-    const [listId, setListId] = useState<string>("")
     const [jobListsGallery, setJobListsGallery] = useState<IJobList[]>([]);
 
     useEffect(() => {
@@ -56,10 +54,10 @@ export default function ListGallery() {
 
     const handleNewList = (event: ChangeEvent<HTMLInputElement>): void => {
             setListName(event.target.value)
-        setListId(event.target.value)
     };
 
-    const handleAddList = (): void => {
+    const handleAddList = (event: FormEvent<HTMLFormElement>): void => {
+        event.preventDefault()
         const newJobList: INewJobList = {
            listName: listName
         }
@@ -86,14 +84,14 @@ export default function ListGallery() {
         <div>
             <CompareHandler/>
             <div className="new list-creator">
-                <form action="">
+                <form onSubmit={handleAddList}>
                     <input type="text"
                            className="new list"
                            placeholder="Enter new list"
                            aria-label="new list"
                            onChange={handleNewList}
                     />
-                    <button className="btn-create" aria-label="create new list" onClick={handleAddList}>+</button>
+                    <button type="submit" className="btn-create" aria-label="create new list">+</button>
                 </form>
             </div>
             <br />

@@ -19,13 +19,13 @@ public class ListController {
 
     //GET
 
-    @GetMapping(value = "/getAll")
+    @GetMapping()
     public List<JobList> getAllLists() {
 
         return listService.getAllLists();
     }
 
-    @GetMapping(value = "getById/{listId}")
+    @GetMapping(value = "{listId}")
     public JobList getListById(@PathVariable String listId) {
 
         return listService.getListById(listId).get();
@@ -33,13 +33,13 @@ public class ListController {
 
     //ADD
 
-    @PutMapping(value = "/saveNew")
+    @PutMapping()
     public JobList saveNewList(@RequestBody JobList newJobList) {
 
         return listService.saveNewList(newJobList);
     }
 
-    @PatchMapping(value = "/update")
+    @PatchMapping(value = "{listId}")
     public JobList updateList(@RequestBody JobList updatedList) {
 
         return listService.updateList(updatedList);
@@ -47,7 +47,7 @@ public class ListController {
 
     // REMOVE
 
-    @DeleteMapping(value = "/remove/{listId}")
+    @DeleteMapping(value = "{listId}")
     public void deleteListById(@PathVariable String listId) {
 
         listService.deleteListById(listId);
