@@ -1,31 +1,37 @@
 .list-category {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  border: 2px solid whitesmoke;
+  border-radius: 10px;
+  padding: 15px;
+  background: linear-gradient(10deg, #b4c0d9 20%, #d9e4fa 100%);
 
   ul {
-   list-style-type: none;
+    list-style-type: none;
     margin: 0 auto;
   }
 }
 
-input {
-  border-bottom-left-radius: 8px;
-  border-top-left-radius: 8px;
-  padding-left: 10px;
+.list-head-container {
+  padding: 0 20px 0 20px;
+  margin: 0 20px 0 20px;
+}
+
+.input-container input {
+  padding: 8px;
   border: 1px solid lightblue;
 }
 
-.input-container {
-  margin-top: 25px;
-  display: flex;
+.input-container input:focus::placeholder {
+  opacity: 0.2;
 }
 
 .input-container button {
-  margin-left: 20px;
   color: #facf5a;
+  margin-left: 15px;
+  transition: 0.3s;
 }
 
 .input-container .btn:hover {
-  background-color: whitesmoke;
-  color: black;
+  opacity: 0.6;
 }

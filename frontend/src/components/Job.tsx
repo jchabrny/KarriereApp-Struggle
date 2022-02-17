@@ -2,6 +2,7 @@ import React from "react";
 import StatusHandler from "./StatusHandler";
 import {IJob} from "../models/Job";
 import './Job.scss';
+import { FaTrash } from 'react-icons/fa';
 
 interface JobProps {
     job: IJob;
@@ -22,10 +23,12 @@ export default function Job(props: JobProps) {
                 </p>
                 <button className="delete-button" onClick={() => {
                     deleteJob(job.jobId);
-                }}>X
+                }}><FaTrash />
                 </button>
             </div>
+            <div className="status-container">
             <StatusHandler clicked={job.status} jobId={job.jobId} updateStatus={updateStatus}/>
+            </div>
         </div>
     );
 }
