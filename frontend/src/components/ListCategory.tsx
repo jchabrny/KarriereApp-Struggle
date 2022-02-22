@@ -52,21 +52,24 @@ export default function ListCategory(props: ListCategoryProps) {
 
     return (
         <div className="list-category">
-            <span className="list-head-container">
+            <div className="list-head-container">
             <ProgressBar score={score}/>
-               <h3>{showTrophy && <FaTrophy color="#AC7D0C"/>}{jobList.listName}</h3>
+                <div className="list-name">
+                <div className="trophy">{showTrophy && <FaTrophy color="#AC7D0C"/>}</div>
+               <h3>{jobList.listName}</h3>
+                </div>
                      <button className="delete-button" onClick={() => {
                          deleteList(jobList.listId);
                      }}><FaArchive/>
             </button>
-                 </span>
+                 </div>
             <div className="jobs">
                 <div className="input-container">
                     <input type="text" placeholder="Enter a job..." name="itemName" value={itemName}
                            onChange={handleChange}/>
                     <input type="month" name="itemDate" value={itemDate} onChange={handleChange}/>
-                    <button className="btn btn-dark btn-md" onClick={handleAdd}>Add job</button>
                 </div>
+                <button className="btn btn-dark btn-md" onClick={handleAdd}>Add job</button>
                 <div className="scroll-div">
                     <ul className="list-group">
                         <li className="list-group-item">

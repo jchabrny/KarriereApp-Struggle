@@ -1,4 +1,4 @@
-import React, {ChangeEvent, FormEvent, FormEventHandler, useEffect, useState} from "react";
+import React, {ChangeEvent, FormEvent, useEffect, useState} from "react";
 import './ListGallery.scss';
 import {getAllLists, removeItem, removeList, saveNewList, updateList} from "../services/BackendService";
 import ListCategory from "./ListCategory";
@@ -95,36 +95,35 @@ export default function ListGallery() {
     const winningList = (): void => {
         if (!jobListsGallery.length) return
         const listScore = jobListsGallery.map((jobList) => {
-         return   {score: calculateScore(jobList), jobListId: jobList.listId}
+            return {score: calculateScore(jobList), jobListId: jobList.listId}
         })
-       listScore.sort((a, b) => {
-           if(a.score < b.score) return 1
-           if(a.score > b.score) return -1
-           return 0;
-       })
+        listScore.sort((a, b) => {
+            if (a.score < b.score) return 1
+            if (a.score > b.score) return -1
+            return 0;
+        })
         setWinningListId(listScore[0].jobListId)
     }
 
     return (
         <div>
-            <div className="new list-creator">
+            <div className="new-list-creator">
                 <form onSubmit={handleAddList}>
+                    <button type="submit" className="btn-create" aria-label="create new list">+</button>
                     <input type="text"
                            className="new list"
                            placeholder="Enter new list"
                            aria-label="new list"
                            onChange={handleNewList}
                     />
-                    <button type="submit" className="btn-create" aria-label="create new list">+</button>
                 </form>
             </div>
-            <br/>
-            <br />
             <div className="list-gallery">
                 {jobListsGallery.map((listCategory, key) => {
                     return <ListCategory jobList={listCategory} addItem={addItem}
                                          updateJobList={updateJobList} deleteItem={deleteItem}
-                                         deleteList={handleDelete} score={calculateScore(listCategory)} key={key} showTrophy={winningListId === listCategory.listId} />
+                                         deleteList={handleDelete} score={calculateScore(listCategory)}
+                                         key={key} showTrophy={winningListId === listCategory.listId}/>
                 })}
             </div>
         </div>

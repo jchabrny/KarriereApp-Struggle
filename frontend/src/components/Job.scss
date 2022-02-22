@@ -1,36 +1,30 @@
 .job {
-  margin: 15px;
-  display: flex;
-  flex-direction: row;
+  margin: 5px;
 }
 
 .job-content {
   display: flex;
-  flex-direction: row;
-  gap: 1rem;
+  justify-content: space-around;
 }
 
 .job-content span {
-  place-items: center;
+  margin-top: 10px;
 }
 
 .job-content p {
-  color: #1c7293;
+  color: var(--secondary-color);
 }
 
-.status-container {
- margin-left: 20px;
-}
-
-.delete-button {
+.job .delete-button {
   width: 35px;
   height: 32px;
   border-radius: 5px;
-  color: #facf5a;
+  color: var(--primary-color);
   background-color: black;
   transition: 0.3s;
   cursor: pointer;
   box-shadow: 4px 2px 2px lightgrey;
+  line-height: 0;
 }
 
 .delete-button:hover {

@@ -2,6 +2,7 @@ import React from 'react';
 import './MainPage.scss';
 import ListGallery from "../components/ListGallery";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 
 export default function MainPage() {
@@ -25,6 +26,7 @@ export default function MainPage() {
                 <h5>Take your pick and get started !</h5>
                 <ListGallery/>
             </div>
+            <Footer/>
         </div>
     );
 }

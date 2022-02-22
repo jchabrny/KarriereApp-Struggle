@@ -1,5 +1,10 @@
+.job-status {
+ display: flex;
+ justify-content: space-evenly;
+}
+
 .job-status input {
- margin-left: 20px;
+ margin-left: 15px;
 }
 
 .job-status label {

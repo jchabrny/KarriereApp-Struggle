@@ -1,5 +1,5 @@
-form {
-  display: flex;
+h3 {
+  margin-bottom: 20px;
 }
 
 .task-list {
@@ -8,8 +8,12 @@ form {
   padding-left: 1.1em;
 }
 
+.all-tasks {
+  margin: 25px 0;
+}
+
 .task-count {
-  margin: 0;
+  margin: 0 0 10px 0;
   color: #1c7293;
   font-size: 1rem;
 }
@@ -51,11 +55,15 @@ form {
   opacity: 0.2;
 }
 
-.delete-content {
-  display: flex;
-  justify-content: space-evenly;
-  margin-bottom: 60px;
+.memo-body {
+  padding: 15px;
+  line-height: 28px;
+
+  span {
+    padding-right: 10px;
+  }
 }
+
 
 /*
 

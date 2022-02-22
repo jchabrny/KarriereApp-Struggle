@@ -1,46 +1,78 @@
 .list-category {
-  display: flex;
-  flex-direction: row;
   border: 2px solid whitesmoke;
   border-radius: 10px;
-  padding: 20px;
+  padding: 10px 10px 20px 10px;
   background: linear-gradient(10deg, #b4c0d9 20%, #d9e4fa 100%);
   box-shadow: 6px 3px 3px darkgrey;
 
   ul {
     list-style-type: none;
-    margin: 0 auto;
-  }
-
-  button {
-    margin-bottom: 15px;
   }
 }
 
 .list-head-container {
-  padding: 0 20px 0 20px;
-  margin: 0 20px 0 20px;
+  margin: 10px 0 10px 0;
+
+  h3 {
+    padding: 5px 0 0 0;
+  }
+}
+
+.list-name {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.list-name .trophy {
+margin-right: 5px;
+  font-size: 28px;
 }
 
 .input-container input {
-  padding: 6px;
   border: 1px solid lightblue;
+  background-color: whitesmoke;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+  font-size: 14px;
+  margin: 2px;
+  padding: 4px;
 }
 
 .input-container input:focus::placeholder {
   opacity: 0.2;
 }
 
-.input-container button {
-  color: #facf5a;
-  margin-top: 10px;
-  margin-left: 15px;
+.list-category .btn {
+margin: 20px;
+}
+
+.list-category .btn:hover {
+  opacity: 0.6;
+}
+
+.list-category button {
+  color: var(--primary-color);
+  margin: 10px 0 10px 0;
   transition: 0.3s;
   box-shadow: 4px 2px 2px lightgrey;
 }
 
-.input-container .btn:hover {
+.list-category .delete-button {
+  width: 35px;
+  height: 32px;
+  border-radius: 5px;
+  color: var(--primary-color);
+  background-color: black;
+  transition: 0.3s;
+  cursor: pointer;
+  box-shadow: 4px 2px 2px lightgrey;
+  line-height: 0;
+}
+
+.list-category .delete-button:hover {
   opacity: 0.6;
+  color: whitesmoke;
 }
 
 .jobs .list-group-item {
@@ -49,7 +81,6 @@
 }
 
 .scroll-div {
-  margin-top: 5px;
-  height: 4em;
+  height: 6.5em;
   overflow: auto;
 }

@@ -1,6 +1,7 @@
 import React from "react";
 import TaskHandler from "../components/TaskHandler";
 import Navbar from "../components/Navbar";
+import './AgendaPage.scss';
 
 
 export default function AgendaPage() {
@@ -8,11 +9,9 @@ export default function AgendaPage() {
         <div>
             <Navbar/>
             <br />
-            <h3>
-                Things to be done ... (task, deadline):
-            </h3>
-            <br/>
+            <div className="agenda-container">
             <TaskHandler/>
+            </div>
         </div>
     )
 }

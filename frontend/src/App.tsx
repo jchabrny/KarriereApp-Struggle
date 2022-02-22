@@ -10,7 +10,7 @@ export default function App() {
 
     return (
         <div className="App">
-            <div className="container">
+            <div className="app-container">
                 <Routes>
                     <Route path="/" element={<MainPage />}/>
                     <Route path="agenda" element={<AgendaPage />}/>
