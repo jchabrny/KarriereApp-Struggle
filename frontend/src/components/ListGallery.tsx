@@ -90,7 +90,8 @@ export default function ListGallery() {
 
     useEffect(() => {
         winningList()
-    })
+        //eslint-disable-next-line
+    }, [jobListsGallery])
 
     const winningList = (): void => {
         if (!jobListsGallery.length) return

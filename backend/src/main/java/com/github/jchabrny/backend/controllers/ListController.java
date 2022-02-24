@@ -5,6 +5,7 @@ import com.github.jchabrny.backend.services.ListService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @CrossOrigin
 @RestController
@@ -27,7 +28,6 @@ public class ListController {
 
     @GetMapping(value = "{listId}")
     public JobList getListById(@PathVariable String listId) {
-
         return listService.getListById(listId).get();
     }
 
