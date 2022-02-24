@@ -53,7 +53,7 @@ export default function ListCategory(props: ListCategoryProps) {
     return (
         <div className="list-category">
             <div className="list-head-container">
-            <ProgressBar score={score}/>
+            <ProgressBar jobList={jobList} score={score} />
                 <div className="list-name">
                 <div className="trophy">{showTrophy && <FaTrophy color="#AC7D0C"/>}</div>
                <h3>{jobList.listName}</h3>

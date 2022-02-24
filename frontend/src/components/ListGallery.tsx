@@ -123,7 +123,7 @@ export default function ListGallery() {
                     return <ListCategory jobList={listCategory} addItem={addItem}
                                          updateJobList={updateJobList} deleteItem={deleteItem}
                                          deleteList={handleDelete} score={calculateScore(listCategory)}
-                                         key={key} showTrophy={winningListId === listCategory.listId}/>
+                                         key={key} showTrophy={winningListId === listCategory.listId} />
                 })}
             </div>
         </div>

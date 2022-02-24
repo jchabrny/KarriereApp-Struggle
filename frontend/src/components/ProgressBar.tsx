@@ -1,24 +1,21 @@
 import React from "react";
 import './ProgressBar.scss';
+import {IJobList} from "../models/JobList";
 
 interface ProgressBarProps {
+    jobList: IJobList
     score: number
 }
 
 export default function ProgressBar(props: ProgressBarProps) {
 
-    const {score} = props;
+    const {jobList, score} = props;
+    const max = (jobList.listItems?.length || 0 ) * 3;
 
     return (
         <div>
-            <progress max="50" value={score}>
+            <progress max={max} value={score}>
             </progress>
         </div>
     );
 }
-
-/*
-div className="progress-bar-container">
-    <div className="progress-bar">{score}%</div>
-</div>
- */
