@@ -1,12 +1,10 @@
 import React from 'react';
-import './Navbar.scss';
 
 export default function Navbar() {
 
-return(
-    <div className="container">
+    return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-            <nav className="container-fluid">
+            <div className="container-fluid">
                 <a className="navbar-brand" href="#">Struggle</a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,12 +22,11 @@ return(
                             <a className="nav-link" href="#">fierce founder</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="/agenda">agenda</a>
+                            <a className="nav-link" href="#">agenda</a>
                         </li>
                     </ul>
                 </div>
-            </nav>
+            </div>
         </nav>
-    </div>
-)
+    )
 }

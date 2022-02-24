@@ -1,17 +1,61 @@
 .list-gallery {
   display: flex;
-  flex-direction: row;
-  gap: 10rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.new .list-creator {
+.new-list-creator {
+  background: transparent;
+  border: 0;
+  outline-color: var(--primary-color);
+}
+
+.new-list-creator form {
+  margin: 16px 0 16px 0;
+  font-size: 18px;
+}
+
+.new {
   background: transparent;
   border: 0;
   outline-color: #facf5a;
   order: 2;
-  padding: 0.5rem;
+  padding: 0.25rem;
 }
 
-.new .list-creator:focus::placeholder {
+.new:focus::placeholder {
   opacity: 0.2;
 }
+
+.btn-create {
+  font-size: 1.5rem;
+  font-weight: 600;
+  border: 0;
+  padding: 0;
+  margin-right: .25em;
+  transition: opacity 250ms ease-in;
+}
+
+.btn-task:hover {
+  opacity: 0.7;
+}
+
+.new-list-creator form input {
+  color: var(--secondary-color);
+}
+
+.new-list-creator form button {
+  opacity: 0.6;
+}
+
+.new-list-creator form button:hover {
+  font-weight: 700;
+  opacity: 1;
+}
+
+.new-list-creator:focus::placeholder {
+  opacity: 0.2;
+}
+
+

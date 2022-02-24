@@ -17,17 +17,23 @@ export default function StatusHandler(props: StatusHandlerProps) {
     return (
         <div className="job-status">
             <fieldset>
-                <input type="radio"
+                <input
+                className="form-check-input me-1"
+                    type="radio"
                        value="1"
                        checked={clicked === 1}
                        onChange={handleRadioClick}/>
                 <label htmlFor="noReply">No reply</label>
-                <input type="radio"
+                <input
+                    className="form-check-input me-1"
+                    type="radio"
                        value="2"
                        checked={clicked === 2}
                        onChange={handleRadioClick}/>
                 <label htmlFor="rejection">Rejection</label>
-                <input type="radio"
+                <input
+                    className="form-check-input me-1"
+                    type="radio"
                        value="3"
                        checked={clicked === 3}
                        onChange={handleRadioClick}/>

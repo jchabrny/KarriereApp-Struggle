@@ -2,6 +2,7 @@ import React from 'react';
 import './MainPage.scss';
 import ListGallery from "../components/ListGallery";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 
 export default function MainPage() {
@@ -23,17 +24,9 @@ export default function MainPage() {
                     <li> or application formats.</li>
                 </ul>
                 <h5>Take your pick and get started !</h5>
-                <br/>
                 <ListGallery/>
             </div>
+            <Footer/>
         </div>
     );
 }
-
-/*
-   <br/>
-                <div className="progress">
-                    <div className="progress-value">
-                    </div>
-                </div>
- */

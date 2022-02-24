@@ -1,17 +1,11 @@
 import React, {ChangeEvent, useState} from "react";
 import Job from "./Job";
+import ProgressBar from "./ProgressBar";
 import {IJobList} from "../models/JobList";
 import './ListCategory.scss';
 import {INewJob} from "../models/NewJob";
+import {FaArchive, FaTrophy} from 'react-icons/fa';
 
-const calculateScore = (jobList: IJobList): number => {
-    let sum = 0;
-  jobList.listItems?.forEach(job => {
-      sum = sum + (job.status||0)
-  })
-    return sum
-
-}
 
 interface ListCategoryProps {
     jobList: IJobList
@@ -19,15 +13,16 @@ interface ListCategoryProps {
     deleteItem: (jobId: string, listId: string) => void
     deleteList: (listId: string) => void
     updateJobList: (jobList: IJobList) => void
+    score: number
+    showTrophy: boolean
 }
 
 export default function ListCategory(props: ListCategoryProps) {
 
-    const {jobList, addItem, deleteItem, deleteList, updateJobList} = props;
+    const {jobList, addItem, deleteItem, deleteList, updateJobList, score, showTrophy} = props;
 
     const [itemName, setItemName] = useState<string>("");
     const [itemDate, setItemDate] = useState<string>("");
-    const score = calculateScore(jobList)
 
     const updateScore = (newStatus: number, jobId: string): void => {
         const newJobList = {...jobList}
@@ -57,28 +52,35 @@ export default function ListCategory(props: ListCategoryProps) {
 
     return (
         <div className="list-category">
-           <span>
+            <div className="list-head-container">
+            <ProgressBar jobList={jobList} score={score} />
+                <div className="list-name">
+                <div className="trophy">{showTrophy && <FaTrophy color="#AC7D0C"/>}</div>
                <h3>{jobList.listName}</h3>
-               <p>{score}</p>
-            <button className="delete-button" onClick={() => {
-                deleteList(jobList.listId);
-            }}>X
+                </div>
+                     <button className="delete-button" onClick={() => {
+                         deleteList(jobList.listId);
+                     }}><FaArchive/>
             </button>
-           </span>
-            <div className="input-container">
-                <input type="text" placeholder="Enter a job..." name="itemName" value={itemName}
-                       onChange={handleChange}/>
-                <input type="month" name="itemDate" value={itemDate} onChange={handleChange}/>
+                 </div>
+            <div className="jobs">
+                <div className="input-container">
+                    <input type="text" placeholder="Enter a job..." name="itemName" value={itemName}
+                           onChange={handleChange}/>
+                    <input type="month" name="itemDate" value={itemDate} onChange={handleChange}/>
+                </div>
                 <button className="btn btn-dark btn-md" onClick={handleAdd}>Add job</button>
+                <div className="scroll-div">
+                    <ul className="list-group">
+                        <li className="list-group-item">
+                            {jobList.listItems?.map((job, key) => {
+                                return <Job key={key} job={job} deleteJob={handleDelete}
+                                            updateStatus={updateScore}/>
+                            })}
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <br/>
-            <ul className="jobs">
-                {jobList.listItems?.map((job, key) => {
-                    return <Job key={key} job={job} deleteJob={handleDelete} updateStatus={updateScore}/>
-                })}
-            </ul>
-            <br/>
-            <br/>
         </div>
     )
 }

@@ -1,7 +1,12 @@
 .job-status {
-  padding: 5px;
+ display: flex;
+ justify-content: space-evenly;
 }
 
 .job-status input {
-  margin-right: 20px;
+ margin-left: 15px;
+}
+
+.job-status label {
+ color: #1c7293;
 }
