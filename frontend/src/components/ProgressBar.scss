@@ -20,28 +20,3 @@ progress[value]::-webkit-progress-value {
   border-radius: 5px;
   background-size: 35px 20px, 100% 100%, 100% 100%;
 }
-
-
-/*
-
-.progress-bar-container {
-  height: 25px;
-  background-color: #5d697a;
-  position: relative;
-  border-radius: 7px;
-}
-
-.progress-bar-container .progress-bar {
-  position: absolute;
-  height: 100%;
-  width: 4%;
-  border-radius: 7px;
-  background-color: #facf5a;
-  animation: progress-animation 5s forwards;
-}
-
-@keyframes progress-animation {
-  0% { width: 0%;}
-  100% {width: 100%;}
-}
-*/
