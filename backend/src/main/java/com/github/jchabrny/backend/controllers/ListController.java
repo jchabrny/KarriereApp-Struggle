@@ -59,19 +59,6 @@ public class ListController {
     {
         return listService.removeItem(listId, jobId);
     }
-
-    /*
-
-    // EDIT
-
-    @PostMapping("/editItem/{listId}")
-    public List<JobItem> changeItem(@PathVariable String listId,
-    @RequestParam String jobId,
-    @RequestParam String newJobName) {
-    return service.changeItem(listId, jobId, newJobName);
-    }
-     */
-
 }
 
 

@@ -22,7 +22,7 @@ export default function Navbar() {
                             <a className="nav-link" href="#">fierce founder</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="/agenda">agenda</a>
+                            <a className="nav-link" href="#">agenda</a>
                         </li>
                     </ul>
                 </div>
