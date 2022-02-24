@@ -9,16 +9,26 @@ export default function Footer() {
                     <div className="col">
                         <h5>archive</h5>
                         <ul>
-                            <li><a href="#">2020</a></li>
-                            <li><a href="#">2021</a></li>
-                            <li><a href="#">2022</a></li>
+                            <li>
+                                <button className="footer-button">2020</button>
+                            </li>
+                            <li>
+                                <button className="footer-button">2021</button>
+                            </li>
+                            <li>
+                                <button className="footer-button">2022</button>
+                            </li>
                         </ul>
                     </div>
                     <div className="col">
                         <h5>signed in as: <span>USERNAME</span></h5>
                         <ul>
-                            <li><a href="#">account settings</a></li>
-                            <li><a href="#">log out</a></li>
+                            <li>
+                                <button className="footer-button">account settings</button>
+                            </li>
+                            <li>
+                                <button className="footer-button">log out</button>
+                            </li>
                         </ul>
                     </div>
                 </div>

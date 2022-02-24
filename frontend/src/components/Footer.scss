@@ -28,16 +28,17 @@ footer .col h5 span {
   padding-left: 26px;
 }
 
-footer .col a {
+footer .col .footer-button {
   color: whitesmoke;
+  background: #23262B;
   font-size: 16px;
-  text-decoration: none;
+  border: none;
   font-weight: 300;
   transition: all 0.3s ease;
   line-height: 30px;
 }
 
-footer .col a:hover {
+footer .col .footer-button:hover {
   color: var(--primary-color);
   padding-left: 8px;
 }

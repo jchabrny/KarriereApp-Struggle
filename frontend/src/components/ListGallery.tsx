@@ -90,7 +90,7 @@ export default function ListGallery() {
 
     useEffect(() => {
         winningList()
-    }, [jobListsGallery])
+    })
 
     const winningList = (): void => {
         if (!jobListsGallery.length) return
