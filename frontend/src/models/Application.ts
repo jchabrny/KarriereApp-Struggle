@@ -1,4 +1,4 @@
-export interface IJob {
+export interface IApplication {
     jobName: string
     jobId: string
     date?: string

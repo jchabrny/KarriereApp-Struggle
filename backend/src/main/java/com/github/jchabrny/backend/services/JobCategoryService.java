@@ -1,8 +1,8 @@
 package com.github.jchabrny.backend.services;
 
-import com.github.jchabrny.backend.models.JobItem;
-import com.github.jchabrny.backend.models.JobList;
-import com.github.jchabrny.backend.repositories.ListRepository;
+import com.github.jchabrny.backend.models.Application;
+import com.github.jchabrny.backend.models.JobCategory;
+import com.github.jchabrny.backend.repositories.JobCategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,25 +13,28 @@ import java.util.UUID;
 
 
 @Service
-public class ListService {
+public class JobCategoryService {
 
     @Autowired
-    ListRepository listRepository;
+    JobCategoryRepository listRepository;
 
-    public List<JobList> getAllLists() {
+    public List<JobCategory> getAllLists() {
+
         return listRepository.findAll();
     }
 
     public void deleteListById(String listId) {
+
         listRepository.deleteById(listId);
     }
 
-    public Optional<JobList> getListById(String listId) {
+    public Optional<JobCategory> getListById(String listId) {
+
         return listRepository.findById(listId);
     }
 
-    public JobList updateList(JobList updatedList) {
-        List<JobItem> updatedJobList = updatedList.getListItems().stream().map((jobItem) -> {
+    public JobCategory updateList(JobCategory updatedList) {
+        List<Application> updatedJobList = updatedList.getListItems().stream().map(jobItem -> {
             if (jobItem.getJobId() == null) {
                 jobItem.setJobId(UUID.randomUUID().toString());
             }
@@ -41,17 +44,17 @@ public class ListService {
         return listRepository.save(updatedList);
     }
 
-    public JobList saveNewList(JobList newList) {
-        return listRepository.insert(newList);
+    public JobCategory saveNewList(JobCategory newJobCategory) {
+        return listRepository.insert(newJobCategory);
     }
 
-    public JobList removeItem(String listId, String jobId) {
-        Optional<JobList> optionalJobList = listRepository.findById(listId);
+    public JobCategory removeItem(String listId, String jobId) {
+        Optional<JobCategory> optionalJobList = listRepository.findById(listId);
         if (optionalJobList.isEmpty()) {
             throw new NoSuchElementException("List not found.");
         }
-        JobList jobList = optionalJobList.get();
-        List<JobItem> updatedJobItems = jobList.getListItems().stream().filter((jobItem) -> {
+        JobCategory jobList = optionalJobList.get();
+        List<Application> updatedJobItems = jobList.getListItems().stream().filter(jobItem -> {
             return (!jobItem.getJobId().equals(jobId));
         }).toList();
         jobList.setListItems(updatedJobItems);

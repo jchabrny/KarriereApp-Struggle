@@ -10,7 +10,7 @@ import org.springframework.data.annotation.Id;
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class JobItem {
+public class Application {
 
     @Id
     private String jobId;

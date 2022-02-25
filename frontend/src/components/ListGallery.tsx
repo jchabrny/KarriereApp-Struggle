@@ -2,11 +2,11 @@ import React, {ChangeEvent, FormEvent, useEffect, useState} from "react";
 import './ListGallery.scss';
 import {getAllLists, removeItem, removeList, saveNewList, updateList} from "../services/BackendService";
 import ListCategory from "./ListCategory";
-import {IJobList} from "../models/JobList";
-import {INewJobList} from "../models/NewJobList";
-import {INewJob} from "../models/NewJob";
+import {IJobCategory} from "../models/JobCategory";
+import {INewJobCategory} from "../models/NewJobCategory";
+import {INewApplication} from "../models/NewApplication";
 
-const calculateScore = (jobList: IJobList): number => {
+const calculateScore = (jobList: IJobCategory): number => {
     let sum = 0;
     jobList.listItems?.forEach(job => {
         sum = sum + (job.status || 0)
@@ -17,7 +17,7 @@ const calculateScore = (jobList: IJobList): number => {
 export default function ListGallery() {
 
     const [listName, setListName] = useState<string>("");
-    const [jobListsGallery, setJobListsGallery] = useState<IJobList[]>([]);
+    const [jobListsGallery, setJobListsGallery] = useState<IJobCategory[]>([]);
     const [winningListId, setWinningListId] = useState<string>("");
 
     useEffect(() => {
@@ -27,7 +27,7 @@ export default function ListGallery() {
             })
     }, [])
 
-    const addItem = (newItem: INewJob, listId: string): void => {
+    const addItem = (newItem: INewApplication, listId: string): void => {
         const jobList = jobListsGallery.find((jobList) => jobList.listId === listId)
         if (jobList) {
             updateList({...jobList, listItems: jobList.listItems ? [...jobList.listItems, newItem] : [newItem]})
@@ -40,7 +40,7 @@ export default function ListGallery() {
         }
     }
 
-    const updateJobList = (jobList: IJobList): void => {
+    const updateJobList = (jobList: IJobCategory): void => {
         updateList(jobList)
             .then(() => {
                 getAllLists()
@@ -66,7 +66,7 @@ export default function ListGallery() {
 
     const handleAddList = (event: FormEvent<HTMLFormElement>): void => {
         event.preventDefault()
-        const newJobList: INewJobList = {
+        const newJobList: INewJobCategory = {
             listName: listName
         }
         saveNewList(newJobList)
