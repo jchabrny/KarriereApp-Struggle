@@ -15,10 +15,10 @@ import java.util.List;
 
 @Builder
 @Document(collection = "jobLists")
-public class JobList {
+public class JobCategory {
 
     @Id
     private String listId;
     private String listName;
-    private List<JobItem> listItems;
+    private List<Application> listItems;
 }

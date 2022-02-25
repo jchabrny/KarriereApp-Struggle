@@ -1,18 +1,18 @@
 import React, {ChangeEvent, useState} from "react";
 import Job from "./Job";
 import ProgressBar from "./ProgressBar";
-import {IJobList} from "../models/JobList";
+import {IJobCategory} from "../models/JobCategory";
 import './ListCategory.scss';
-import {INewJob} from "../models/NewJob";
+import {INewApplication} from "../models/NewApplication";
 import {FaArchive, FaTrophy} from 'react-icons/fa';
 
 
 interface ListCategoryProps {
-    jobList: IJobList
-    addItem: (newItem: INewJob, listId: string) => void
+    jobList: IJobCategory
+    addItem: (newItem: INewApplication, listId: string) => void
     deleteItem: (jobId: string, listId: string) => void
     deleteList: (listId: string) => void
-    updateJobList: (jobList: IJobList) => void
+    updateJobList: (jobList: IJobCategory) => void
     score: number
     showTrophy: boolean
 }

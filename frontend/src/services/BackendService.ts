@@ -1,20 +1,22 @@
 import axios from "axios";
-import {IJobList} from "../models/JobList";
-import {IJob} from "../models/Job";
-import {INewJobList} from "../models/NewJobList";
+import {IJobCategory} from "../models/JobCategory";
+import {IApplication} from "../models/Application";
+import {INewJobCategory} from "../models/NewJobCategory";
 
-export const saveNewList = (newJobList: INewJobList): Promise<INewJobList> => axios.put(`api/list`, newJobList)
-    .then(response => response.data)
+export const saveNewList = (newJobCategory: INewJobCategory):
+    Promise<INewJobCategory> => axios.put(`api/list`, newJobCategory).then(response => response.data)
 
-export const getAllLists =(): Promise<IJobList[]> => axios.get(`api/list`).then(response => response.data)
+export const getAllLists = ():
+    Promise<IJobCategory[]> => axios.get(`api/list`).then(response => response.data)
 
-export const updateList = (updatedList: {   listName: string, listId: string, listItems?: Partial<IJob>[]}): Promise<IJobList> => axios.patch(`/api/list/${updatedList.listId}`,
-    updatedList).then(response => response.data)
+export const updateList = (updatedList: { listName: string, listId: string, listItems?: Partial<IApplication>[] }):
+    Promise<IJobCategory> => axios.patch(`/api/list/${updatedList.listId}`, updatedList).then(response => response.data)
 
-export const removeItem = (listId: string, jobId: string): Promise<IJobList> => axios.delete(`api/list/${listId}/removeItem/${jobId}`)
-    .then(response => response.data)
+export const removeItem = (listId: string, jobId: string):
+    Promise<IJobCategory> => axios.delete(`api/list/${listId}/removeItem/${jobId}`).then(response => response.data)
 
-export const removeList = (listId: string): Promise<IJobList> => axios.delete(`api/list/${listId}`).then(response => response.data)
+export const removeList = (listId: string):
+    Promise<IJobCategory> => axios.delete(`api/list/${listId}`).then(response => response.data)
 
 
 

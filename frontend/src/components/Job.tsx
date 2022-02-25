@@ -1,11 +1,11 @@
 import React from "react";
 import StatusHandler from "./StatusHandler";
-import {IJob} from "../models/Job";
+import {IApplication} from "../models/Application";
 import './Job.scss';
 import {FaTrash} from 'react-icons/fa';
 
 interface JobProps {
-    job: IJob;
+    job: IApplication;
     deleteJob: (jobId: string) => void
     updateStatus: (newStatus: number, jobId: string) => void
 }
